@@ -84,4 +84,13 @@ class TestMonster < Minitest::Test
   def test_zombie_challenge_rating
     assert_equal 0.25, zombie.challenge_rating
   end
+  def test_aboleth_hitpoints
+    assert_equal 135, monster.hit_points
+  end
+  def test_zombie_hitpoints
+    assert_equal 22, zombie.hit_points
+  end
+  def test_damage
+    #TODO
+  end
 end

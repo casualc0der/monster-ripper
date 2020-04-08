@@ -2,6 +2,7 @@ require_relative './monster_list'
 
 class Monster
   include MonsterList
+  attr_accessor :hit_points
   attr_reader :name,
               :index,
               :type, 
@@ -34,6 +35,7 @@ class Monster
     if genus.include?(monster_type.downcase)
       @type = monster_type.downcase
       @index = genus.find_index(type)
+      @hit_points = LIST[index][:hit_points]
     else
       raise NoMethodError
     end
@@ -64,6 +66,11 @@ class Monster
   end
 end
 
+hordeOfZombies =  [Monster.new('gary', 'zombie'), Monster.new('sam','zombie'), Monster.new('david','zombie')]
 
+p hordeOfZombies[0].hit_points
+hordeOfZombies[0].hit_points -= 23
+p hordeOfZombies[0].hit_points
+p hordeOfZombies[1].hit_points
 
 
